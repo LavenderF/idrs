@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "IDRS Reddit Stereotype Detector",
+  "version": "1.0",
+  "description": "Detects implicit occupational stereotypes in Reddit comments.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
